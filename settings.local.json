@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(command-development)",
+      "Bash(git clone:*)",
+      "Bash(chmod:*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/parafee41/Desktop/shuaizhitools/.claude/scripts/check-and-archive-migration.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/parafee41/Desktop/shuaizhitools/.claude/scripts/check-and-archive-migration.sh"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/parafee41/Desktop/shuaizhitools/.claude/scripts/check-good-commit.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
